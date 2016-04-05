@@ -7,11 +7,11 @@ This repository contains the data and metadata associated with the Broughton sea
 ### Introduction.txt - outlines background and motivation for the sea-louse monitoring program in the Broughton.
 
 ### Data files:
-	* BroughtonSeaLice_fishData.csv - contains the individual fish health and sea louse counts from 2001 to present.
-	* BroughtonSeaLice_siteData.csv - contains the site data (location, temperature, salinity etc.) for each sampling location/date combination.
+* BroughtonSeaLice_fishData.csv - contains the individual fish health and sea louse counts from 2001 to present.
+* BroughtonSeaLice_siteData.csv - contains the site data (location, temperature, salinity etc.) for each sampling location/date combination.
 
 ### Metadata files:
-	* BroughtonSeaLice_METADATA.txt - contains all metadata associated with the sea-lice database including methodology.
-	* fish_variableDescriptions.csv - describes columns in BroughtonSeaLice_fishData.csv
-	* site_variableDescriptions.csv - describes columns in BroughtonSeaLice_siteData.csv
-	* Figures - subfolder containing all figures referenced in BroughtonSeaLice_METADATA.txt
+* BroughtonSeaLice_METADATA.txt - contains all metadata associated with the sea-lice database including methodology.
+* fish_variableDescriptions.csv - describes columns in BroughtonSeaLice_fishData.csv
+* site_variableDescriptions.csv - describes columns in BroughtonSeaLice_siteData.csv
+* Figures - subfolder containing all figures referenced in BroughtonSeaLice_METADATA.txt
