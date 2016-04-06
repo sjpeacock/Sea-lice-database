@@ -72,10 +72,12 @@ Broughton Archipelago, British Columbia, 2001 through 2015, sea lice, *Lepeophth
 
 ### A. "Overall project" description
 The sea lice monitoring does not represent part of a larger "overall" project. Therefore, the project details can be found below under B. "Specific subproject" description, with the exception of 6. Source(s) of funding, which we provide below.
+
 #### 6. Source(s) of funding
 * Raincoast Research Society, Box 399, Sointula, BC V0N 3E0
 * Salmon Coast Field Station Society, General Delivery, Simoom Sound, BC V0P 1S0 (including small grants from the Pacific Salmon Foundation, channeled through the Salmon Coast Field Station Society)
 * In-kind contributions of volunteers, equipment, and boat time from University of Alberta (Dr. Mark Lewis), University of Victoria (Dr. John Volpe) and University of Toronto (Dr. Martin Krkosek)
+
 ### B. "Specific subproject" description
 
 #### 1. Site description
