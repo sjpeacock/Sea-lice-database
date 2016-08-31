@@ -1,0 +1,6 @@
+{
+  "dist": {
+    "Sea-lice-database": "git@github.com:sjpeacock/Seal-lice-database.git#gh-pages",
+    "beforeStageCommand": "cat front.yml ../README.md > index.md"
+  }
+}
