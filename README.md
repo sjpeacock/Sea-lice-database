@@ -20,6 +20,8 @@ FishData <- repmis::source_data(url = "https://raw.githubusercontent.com/sjpeaco
 SiteData <- repmis::source_data(url = "https://raw.githubusercontent.com/sjpeacock/Sea-lice-database/master/Data/BroughtonSeaLice_siteData.csv")
 ```
 
+## Authors
+
 Stephanie J Peacock (1,†), Andrew W Bateman (1,2,3,†), Martin Krkosek (2,3), Brendan Connors (4), Scott Rogers (3,5), Lauren Portner (3), Zephyr Polk (3), Coady Webb (3), Alexandra Morton (3,6)
 
 1. Department of Biological Sciences, University of Alberta, Edmonton, AB T6G 1E9
