@@ -1,6 +1,24 @@
 # Sea-louse parasites on juvenile wild salmon in the Broughton Archipelago, British Columbia, Canada
 
-This repository contains the data and metadata associated with the Broughton sea louse monitoring by the Salmon Coast Field Station (www.salmoncoast.org).  This dataset has been submitted as a data paper to Ecology. Questions should be directed to Stephanie Peacock (stephanie.j.peacock@gmail.com).
+This repository contains data from long-term monitoring of juvenile salmon for sea lice, by the [Salmon Coast Field Station](www.salmoncoast.org). Questions should be directed to Stephanie Peacock (stephanie.j.peacock@gmail.com).
+
+**Last update:** August 31, 2016; data current through June 2016.
+ 
+## Using the data
+* **Before** using the data, please read the associated metadata (below)!
+* To download the entire repository, including the data and metadata, click Download .zip above
+* The fish and site data can be accessed at the following URLs:
+
+> [https://raw.githubusercontent.com/sjpeacock/Sea-lice-database/master/Data/BroughtonSeaLice_fishData.csv](https://raw.githubusercontent.com/sjpeacock/Sea-lice-database/master/Data/BroughtonSeaLice_fishData.csv)
+
+> [https://raw.githubusercontent.com/sjpeacock/Sea-lice-database/master/Data/BroughtonSeaLice_siteData.csv](https://raw.githubusercontent.com/sjpeacock/Sea-lice-database/master/Data/BroughtonSeaLice_siteData.csv)
+
+* To import import the fish and site data directly into R simply use the `source_data` function in the `repmis` package:
+
+```
+FishData <- repmis::source_data(url = "https://raw.githubusercontent.com/sjpeacock/Sea-lice-database/master/Data/BroughtonSeaLice_fishData.csv")
+SiteData <- repmis::source_data(url = "https://raw.githubusercontent.com/sjpeacock/Sea-lice-database/master/Data/BroughtonSeaLice_siteData.csv")
+```
 
 Stephanie J Peacock (1,†), Andrew W Bateman (1,2,3,†), Martin Krkosek (2,3), Brendan Connors (4), Scott Rogers (3,5), Lauren Portner (3), Zephyr Polk (3), Coady Webb (3), Alexandra Morton (3,6)
 
