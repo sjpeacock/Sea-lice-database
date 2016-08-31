@@ -219,10 +219,8 @@ A small army of people have beach seined and "sea liced," including (but not lim
 
 #### 1. Latest update
 
-December 15, 2015
+August 31, 2016
 
-#### 2. Latest archive date
-February 2016.
 
 #### 3. Metadata status
 
@@ -231,7 +229,8 @@ March 24, 2016: revised based on comments from two anonymous reviewers at Ecolog
 
 #### 4. Data verification
 
-Verified up to and including 2015.
+August 31, 2016: 2016 data checked and added to database by S. Peacock.
+December 2015: Verified up to and including 2015.
 
 ### B. Accessibility
 
@@ -279,7 +278,7 @@ There are no costs associated with acquiring and using these data, but we requir
 BroughtonSeaLice_siteData.csv
 BroughtonSeaLice_fishData.csv
 
-#### 2. Size
+#### 2. Size (at time of initial publication in 2015)
 
 BroughtonSeaLice_siteData.csv: 492 sites, 28 KB 
 BroughtonSeaLice_fishData.csv: 31 200 fish, 2.2 MB
@@ -332,7 +331,7 @@ An example of the data entry form from 2014/2015 is given in Fig. 7.  This data 
 
 #### 2. Location of completed data forms
 
-Physical raw data sheets from 2001-2009 are stored with Alexandra Morton (Raincoast Research, Malcolm Island, BC) and raw data sheets from 2010-2015 are stored at the Salmon Coast Field Station (Simoom Sound, BC).
+Physical raw data sheets from 2001-2009 are stored with Alexandra Morton (Raincoast Research, Malcolm Island, BC) and raw data sheets from 2010-2016 are stored at the Salmon Coast Field Station (Simoom Sound, BC).
 
 #### 3. Data entry verification procedures
 
