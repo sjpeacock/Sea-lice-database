@@ -225,11 +225,13 @@ August 31, 2016
 #### 3. Metadata status
 
 December 2015: metadata compiled.
+
 March 24, 2016: revised based on comments from two anonymous reviewers at Ecology. Main revisions were (1) removal of paper summaries and (2) addition of Table 2 distinguishing true zeroes from missing data.
 
 #### 4. Data verification
 
 August 31, 2016: 2016 data checked and added to database by S. Peacock.
+
 December 2015: Verified up to and including 2015.
 
 ### B. Accessibility
