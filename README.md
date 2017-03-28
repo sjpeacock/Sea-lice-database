@@ -2,7 +2,7 @@
 
 This repository contains data from long-term monitoring of juvenile salmon for sea lice, by the [Salmon Coast Field Station](www.salmoncoast.org). Questions should be directed to Stephanie Peacock (stephanie.j.peacock@gmail.com).
 
-**Last update:** August 31, 2016; data current through June 2016.
+**Last update:** March 28, 2017; data current through June 2016.
  
 ## Using the data
 * **Before** using the data, please read the associated metadata (below)!
@@ -239,8 +239,9 @@ A small army of people have beach seined and "sea liced," including (but not lim
 
 #### 1. Latest update
 
+History of updates:
 August 31, 2016
-
+March 28, 2017
 
 #### 3. Metadata status
 
@@ -338,7 +339,7 @@ Variable identities, descriptions, data types, the range of values, allowable va
 
 See 6. Special characters/fields. We removed data that seemed impossible (e.g., body depth < 3 mm and fork lengths < 20 mm) and set those fields to blank.  This included fork length and body depth measurements that were impossible given the range of data observed (e.g., 1 mm height with a fork length of 56 mm) or errors in data entry such as characters (e.g., `, -) instead of numbers or species codes. 
 
-The fish data include 95 observations of sockeye salmon captured between 2012 and 2015.  We did not target sockeye, but they were included on our scientific fishing permit, and we examined them for sea lice when they were captured. 
+The fish data include 95 observations of sockeye salmon captured between 2012 and 2015.  We did not target sockeye, with the exception of sampling on June 20, 2010, but they were included on our scientific fishing permit, and we examined them for sea lice when they were captured. The sockeye captured on June 20, 2010 were sent to DFO for genetic stock ID and found to have originated from the Nimpkish River on Vancouver Island.
 
 ## Class V: Supplemental descriptors
 
@@ -405,6 +406,11 @@ To be updated as data requests are made.
 #### 2. Data set update history
 
 To be updated as the data set is added to and revised. We plan to update the data set on an annual basis as long as monitoring continues. See the GitHub repository for updates and history.
+
+March 27, 2017
+* Added missing data for June 18 (Burdwood, Wicklow and Glacier) and 20 (Wicklow only) 2010 that were provided by Scott Rogers. These are labelled as site_id 313.1-313.4
+* Data from June 20, 2010 are sockeye only, and were sent to the Pacific Biological Station (DFO) for genetic stock ID.  They were found to have originated from the Nimpkish River on Vancouver Island.
+* Added a column named ```sockeye_examined``` to the site data, indicating the number of sockeye salmon that were sampled (if any).
 
 #### 3. Review history
 
