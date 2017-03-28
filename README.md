@@ -111,7 +111,7 @@ Sampling occurred in the coastal marine environment within ~10 m of shoreline.
 The Broughton Archipelago lies within the regional district of Mount Waddington in British Columbia, Canada. Sample locations were between 50 46.237' N to 50 57.267' N and 126 17.035' W to 126 41.522' W (Fig. 1).  The area is Musgamagw Dzawada’enuxw Territory and has a rich history of use by indigenous people. The inlets and channels are home to abundant wildlife, and provide nursery habitat for marine and anadromous fishes.  Sampling locations were situated along juvenile pink and chum migration routes, as they swim from natal streams and rivers towards the open ocean (Fig. 1).
 
 
-![alt text][Fig1]
+![Fig1](https://github.com/sjpeacock/Sea-lice-database/blob/master/Metadata/Figures/Fig1.png)
 **Fig. 1.**  Map of the study area showing the three locations (Glacier, Burdwood, and Wicklow) where juvenile salmon were monitored for sea louse parasites, as well as the locations of all salmon farms that were active at some point during monitoring from 2001-2015.
 
 ##### c. Habitat
