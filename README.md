@@ -119,7 +119,7 @@ The Broughton Archipelago lies within the regional district of Mount Waddington 
 Juvenile salmon were usually found close to shore, in water depths from one to five metres below surface, in bays sheltered from strong tidal currents and waves. Tides range from one to four metres, and the shoreline habitat is often dependent on tide height, ranging from rocky intertidal to shell beaches to forest edge. Because sampling occurred on a regular weekly basis during daylight hours, tide height could not be controlled for when sampling. Towards the end of the annual sampling period, in June, beds of bull kelp (*Nereocystis luetkeana*) developed in which the salmon could be found at low tide, and occasionally we sampled in these beds. As the season progressed, and juvenile salmon grew, they would occur at greater depths and further offshore, but never more than ~10 metres (as we made collections by beach seine, we limited our search zone to the near-shore environment; Fig. 2).
 
 
-![alt text][Fig2]
+![Fig2](https://github.com/sjpeacock/Sea-lice-database/blob/master/Metadata/Figures/Fig2.png)
 **Fig. 2.** Setting a beach seine on Denham Island at high tide near the Burdwood location. This image illustrates the typical shoreline and landscape of the Broughton Archipelago. Photo credit: Stephanie Peacock
 
 
@@ -140,7 +140,7 @@ We designed the sea lice monitoring program to generate a long-term abundance ti
 The distribution of sea lice among hosts tends to be clustered (Murray 2002), requiring a relatively large sample size to accurately describe the distribution of parasites.  Thus, we aimed to sample 50 pink and 50 chum salmon at each sample site, although we were often limited by salmon availability and did not always achieve this. In early years (2001-2006), there were usually no more than 50 salmon total sampled at each site, while in later years (2007-2015) we regularly achieved a sample size of 100 salmon (Fig. 3; also summarized in site data). Pink salmon were usually more abundant than chum salmon.  From 2007 to 2012, if we did not obtain our sample goal of 50 chum salmon at a given site, we examined  additional pink salmon (if available) to reach the 100-salmon target.  From 2013-2015, we aimed for 50 pink salmon and 50 chum salmon, but we did not supplement the sample when either species was limiting (Fig. 3). 
 
 
-![alt text][Fig3]
+![Fig3](https://github.com/sjpeacock/Sea-lice-database/blob/master/Metadata/Figures/Fig3.png)
 **Fig. 3.** The number of pink salmon (grey) and chum salmon (black) sampled at three locations: (a) Glacier, (b) Burdwood and (c) Wicklow, from 2001 to 2015.
 
 ##### b. Permanent plots
@@ -152,7 +152,7 @@ We carried out sampling at three locations referred to as Glacier, Burdwood, and
 The frequency of monitoring has been variable, particularly in the early years of monitoring (Fig. 4).  More recently, we have aimed to monitor all three sites on a weekly basis from April 1st to June 30th.  In some years, we did not monitor Wicklow, the site furthest from the wild-salmon spawning rivers, at the beginning of the season, because there were no juvenile salmon to be found there.  Similarly, later in some years, we did not monitor Glacier, the site closest to the spawning rivers, for lack of fish (e.g., 2001, 2009; Fig. 4). 
 
 
-![alt text][Fig4]
+![Fig4](https://github.com/sjpeacock/Sea-lice-database/blob/master/Metadata/Figures/Fig4.png)
 **Fig. 4.** The sampling window from 2001-2015, showing dates within each year that the three monitoring sites were sampled for juvenile salmon. In recent years, we have aimed to sample weekly for April through May, inclusive (cyan band) to coincide with the period of greatest juvenile pink and salmon outmigration.
 
 
@@ -171,7 +171,7 @@ For each juvenile salmon sampled, we recorded species (pink, *O. gorbuscha*, or 
 We recorded fork length (from the "fork" in the tail, the most anterior portion of the tails posterior edge, to the anterior tip of the snout) and, in years 2003, 2004, 2006, and 2010 through 2015, body depth (the greatest dorsal-ventral measurement of a juvenile’s body, not including its fins) to the nearest millimetre by measuring the salmon against 1 mm graph paper (Fig. 5A). In 2004 and 2005, some fish were measured with digital calipers and so the fork lengths are given to one decimal place in mm.
 
 
-![alt text][Fig5]
+![Fig5](https://github.com/sjpeacock/Sea-lice-database/blob/master/Metadata/Figures/Fig5.png)
 **Fig. 5.** A. Measurements of fork length and, in some years, body depth to the nearest mm were recorded for each salmon. B. We noted damage from, for example, predators. Highlighted with an arrow is a semi-circular scar from a fish predator. C. Pinched belly (PB) occurred when a chalimus-stage louse attached to the ventral surface causing the epidermis to scar and pinch as the fish grows. D. Copepodid- and chalimus-stage lice were identifiable under a 16x hand lens.  Shown here are a copepodid-stage L. salmonis (C, black arrow), and several chalimus-stage lice (species unknown; H, white arrows). The upper two chalimus stage lice have accompanying chalimus scars that would be noted. E. An example of a chalimus scar (CS) from the attachment of chalimus-stage louse (H). Blue blotches can be seen on the dorsal surface. F. An eroded gill (EG) was noted, and if a louse was attached nearby this was accompanied by a comment of a grazed gill place (GGP).  Shown also is a chalimus scar beneath the dorsal fin (CS).
 
 ###### Louse identification
@@ -180,7 +180,7 @@ We categorized the species (*L. salmonis* or *C. clemensi*) and stages of attach
 
 Occasionally, we observed adult male sea lice firmly attaching to the posterior end of pre-adult female sea lice.  We noted this behaviour as "mate guarding" on the datasheet, as it may be of interest in studies of dispersal and mate limitation (e.g., Connors et al. 2011).
 
-![alt text][Fig6]
+![Fig6](https://github.com/sjpeacock/Sea-lice-database/blob/master/Metadata/Figures/Fig6.png)
 **Fig. 6.** The relationships among unique columns in the dataset: italic grey words are the unique stages/sex/species that are differentiated in the dataset.  In early years (2001-2006) not all stages/species were distinguished; see text for details.
 
 
@@ -324,7 +324,7 @@ All missing data are blank fields in the .csv files. We did not distinguish inst
 
 
 Table 2. Summary of the number of fish examined and the total numbers of lice of each stage/species recorded, as well as the number of fish health observations of each type. Zeroes are color coded to indicate those that are likely missing data (i.e., not recorded for that year; red), true zeroes (green) and unknown (yellow).
-![alt text][Table2]
+![Table2](https://github.com/sjpeacock/Sea-lice-database/blob/master/Metadata/Figures/Table2.png)
 
 
 #### 7. Authentication procedures
@@ -347,7 +347,7 @@ The fish data include 95 observations of sockeye salmon captured between 2012 an
 
 An example of the data entry form from 2014/2015 is given in Fig. 7.  This data entry form has varied over the years.
 
-![alt text][Fig7]
+![Fig7](https://github.com/sjpeacock/Sea-lice-database/blob/master/Metadata/Figures/Fig7.png)
 **Fig. 7.** Example of completed data sheet for sea louse monitoring.  Upon returning to the field station, these data sheets were scanned, and later transcribed into digital format. The cop column has L or C for Lepeoptheirus or Caligus. ChalA and ChalB columns are hash marks for the number of chalimus A and chalimus B stages (no species).  All motile lice are noted in the motile column: pre-adult Lepeoptheirus (PAL), adult Lepeoptheirus (L), gravid Lepeoptheirus (GL), Caligus (C) or gravid Caligus (GC). The notes column has codes for motile scars (MS), predation scars (PS), hemorrhaging (H), eroded gill plate (EG), blue blotches (BB), and scales (SC). Any other information, including the type of predator scar and location of hemorrhaging, is written in the Comments column.
 
 #### 1. Data forms or acquisition methods
@@ -453,11 +453,3 @@ Many individuals helped in data collection and supported those who spent countle
 * Peacock, S.J., Connors, B.M., Krkosek, M., Irvine, J.R., and Lewis, M.A. 2014. Can reduced predation offset negative effects of sea louse parasites on chum salmon? Proc. R. Soc. B Biol. Sci. 281: 20132913. doi: 10.1098/rspb.2013.2913.
 * Peacock, S.J., Krkosek, M., Proboszcz, S., Orr, C., and Lewis, M.A. 2013. Cessation of a salmon decline with control of parasites. Ecol. Appl. 23: 606–620. doi: 10.1890/12-0519.1.
 * R Development Core Team. 2014. R: A Language and Environment for Statistical Computing. Vienna, Austria. http://www.r-project.org/. Available from http://www.r-project.org/.
-[Fig1]: https://github.com/sjpeacock/Sea-lice-database/blob/master/Metadata/Figures/Fig1.png "Map of the study area showing the three locations (Glacier, Burdwood, and Wicklow) where juvenile salmon were monitored for sea louse parasites, as well as the locations of all salmon farms that were active at some point during monitoring from 2001-2015."
-[Fig2]: https://github.com/sjpeacock/Sea-lice-database/blob/master/Metadata/Figures/Fig2.png "Setting a beach seine on Denham Island at high tide near the Burdwood location. This image illustrates the typical shoreline and landscape of the Broughton Archipelago. Photo credit: Stephanie Peacock"
-[Fig3]: https://github.com/sjpeacock/Sea-lice-database/blob/master/Metadata/Figures/Fig3.png "The number of pink salmon (grey) and chum salmon (black) sampled at three locations: (a) Glacier, (b) Burdwood and (c) Wicklow, from 2001 to 2015."
-[Fig4]: https://github.com/sjpeacock/Sea-lice-database/blob/master/Metadata/Figures/Fig4.png "The sampling window from 2001-2015, showing dates within each year that the three monitoring sites were sampled for juvenile salmon. In recent years, we have aimed to sample weekly for April through May, inclusive (cyan band) to coincide with the period of greatest juvenile pink and salmon outmigration."
-[Fig5]: https://github.com/sjpeacock/Sea-lice-database/blob/master/Metadata/Figures/Fig5.png "A. Measurements of fork length and, in some years, body depth to the nearest mm were recorded for each salmon. B. We noted damage from, for example, predators. Highlighted with an arrow is a semi-circular scar from a fish predator. C. Pinched belly (PB) occurred when a chalimus-stage louse attached to the ventral surface causing the epidermis to scar and pinch as the fish grows. D. Copepodid- and chalimus-stage lice were identifiable under a 16x hand lens.  Shown here are a copepodid-stage L. salmonis (C, black arrow), and several chalimus-stage lice (species unknown; H, white arrows). The upper two chalimus stage lice have accompanying chalimus scars that would be noted. E. An example of a chalimus scar (CS) from the attachment of chalimus-stage louse (H). Blue blotches can be seen on the dorsal surface. F. An eroded gill (EG) was noted, and if a louse was attached nearby this was accompanied by a comment of a grazed gill place (GGP).  Shown also is a chalimus scar beneath the dorsal fin (CS)."
-[Fig6]: https://github.com/sjpeacock/Sea-lice-database/blob/master/Metadata/Figures/Fig6.png "The relationships among unique columns in the dataset: italic grey words are the unique stages/sex/species that are differentiated in the dataset.  In early years (2001-2006) not all stages/species were distinguished; see text for details."
-[Fig7]: https://github.com/sjpeacock/Sea-lice-database/blob/master/Metadata/Figures/Fig7.png "Example of completed data sheet for sea louse monitoring.  Upon returning to the field station, these data sheets were scanned, and later transcribed into digital format. The cop column has L or C for Lepeoptheirus or Caligus. ChalA and ChalB columns are hash marks for the number of chalimus A and chalimus B stages (no species).  All motile lice are noted in the motile column: pre-adult Lepeoptheirus (PAL), adult Lepeoptheirus (L), gravid Lepeoptheirus (GL), Caligus (C) or gravid Caligus (GC). The notes column has codes for motile scars (MS), predation scars (PS), hemorrhaging (H), eroded gill plate (EG), blue blotches (BB), and scales (SC). Any other information, including the type of predator scar and location of hemorrhaging, is written in the Comments column."
-[Table2]: https://github.com/sjpeacock/Sea-lice-database/blob/master/Metadata/Figures/Table2.png "Summary of the number of fish examined and the total numbers of lice of each stage/species recorded, as well as the number of fish health observations of each type. Zeroes are color coded to indicate those that are likely missing data (i.e., not recorded for that year; red), true zeroes (green) and unknown (yellow)."
