@@ -240,7 +240,9 @@ A small army of people have beach seined and "sea liced," including (but not lim
 #### 1. Latest update
 
 History of updates:
+
 August 31, 2016
+
 March 28, 2017
 
 #### 3. Metadata status
