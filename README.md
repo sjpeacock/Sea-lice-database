@@ -2,7 +2,7 @@
 
 This repository contains data from long-term monitoring of juvenile salmon for sea lice, by the [Salmon Coast Field Station](www.salmoncoast.org). Questions should be directed to Stephanie Peacock (stephanie.j.peacock@gmail.com).
 
-**Last update:** March 28, 2017; data current through June 2016.
+**Last update:** October 8, 2017; data current through June 2017.
  
 ## Using the data
 * **Before** using the data, please read the associated metadata (below)!
@@ -239,11 +239,13 @@ A small army of people have beach seined and "sea liced," including (but not lim
 
 #### 1. Latest update
 
-History of updates:
+History of updates of data:
 
-August 31, 2016
+August 31, 2016: SJP added data from 2016 monitoring season.
 
-March 28, 2017
+March 28, 2017: SJP added missing data from June 2010 sent by Scott Rogers. 
+
+October 8, 2017: SJP added data from 2017 monitoring season.
 
 #### 3. Metadata status
 
@@ -253,9 +255,10 @@ March 24, 2016: revised based on comments from two anonymous reviewers at Ecolog
 
 #### 4. Data verification
 
-August 31, 2016: 2016 data checked and added to database by S. Peacock.
-
 December 2015: Verified up to and including 2015.
+August 31, 2016: 2016 data checked and added to database by SJP.
+October 8, 2017: 2017 data checked and added to database by SJP.
+
 
 ### B. Accessibility
 
