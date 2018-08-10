@@ -2,7 +2,7 @@
 
 This repository contains data from long-term monitoring of juvenile salmon for sea lice, by the [Salmon Coast Field Station](www.salmoncoast.org). Questions should be directed to Stephanie Peacock (stephanie.j.peacock@gmail.com).
 
-**Last update:** October 8, 2017; data current through June 2017.
+**Last update:** August 10, 2018; data current through June 2018.
  
 ## Using the data
 * **Before** using the data, please read the associated metadata (below)!
@@ -190,7 +190,12 @@ We recorded louse-induced damage including chalimus scars from where a chalimus-
 
 In addition to louse counts, we recorded any evidence of predation and noted whether it appeared to be from avian predators (linear slash marks) or fish predators (semi-circular arrays of tooth marks; Fig. 5B). We also recorded any haemorrhaging, identified as red spots on skin or fins, and noted the location of haemorrhaging in the comments. Common locations on the fish to which we refer in the comments include the adipose fin (ADF), anal fin (ANF), caudal fin (CDF), pectoral fins (PCF), pelvic fins (PVF), dorsal fin (DF), snout, flank, caudal peduncle, "gill plate" (operculum), and eye. We noted erosion of the gill plate (Fig. 5F), and in the Comments we clarified whether the eroded gill appeared to be due to grazing from sea lice (i.e., grazed gill plate, GGP). It was noted that salmon seemed to darken in colour when under stress (A. Morton, personal observation), and beginning in 2006 we noted significant dark blue coloration of salmon as "blue blotches" (Fig. 5E). We recorded if the salmon had a "pinched belly" where the skin had tightened, which was often associated with a chalimus scar on the flank (Fig. 5C). We noted in the Comments any substantial damage to fins, as well as other opportunistic fish-health observations that did not conform to the already mentioned categories.  Finally, we noted if the salmon had begun to develop scales, as scales can confer protection against sea lice and mark a development threshold for impacts to host fish (Brauner et al. 2012).
 
+Beginning in 2018, we also recorded the presence of opaque sections in the eyes of juvenile salmon. It is unknown what the causes or consequences of this "white eye" are, but it is anecdotally increasing in frequency and also present among farmed salmon. Observations are noted as "1" if there is any presence of white opaque sections in a fish's eye (Fig. 7).
+
 After non-lethal examination, we allowed fish to recover in a 20 litre seawater-filled bucket and then released them at the location of capture. We noted any mortalities of salmon that had been examined and (separately) any mortalities of salmon held in the net or buckets but not examined. Before releasing all salmon captured, we also estimated and recorder the total number of pink and chum salmon captured and the ratio of pink to chum salmon in the school.  This information is available with the site data. 
+
+![Fig7](https://github.com/sjpeacock/Sea-lice-database/blob/master/Metadata/Figures/Fig7.png)
+**Fig. 7.**  Pictures of three juvenile salmon showing the presence of "white eye" with a small, cloudy spot in the centre of the eye (a), a larger opaque section (b), and a more severe case where the opaque section covers most of the eye (c). All of these cases would be scored as "1" indicating the presence of white eye.
 
 ##### b. Instrumentation
 
@@ -247,6 +252,8 @@ March 28, 2017: SJP added missing data from June 2010 sent by Scott Rogers.
 
 October 8, 2017: SJP added data from 2017 monitoring season.
 
+August 10, 2018: SJP added data from 2018 monitoring season, updated fish data to include observations of "white eye" (see Fig. 7).
+
 #### 3. Metadata status
 
 December 2015: metadata compiled.
@@ -258,6 +265,7 @@ March 24, 2016: revised based on comments from two anonymous reviewers at Ecolog
 December 2015: Verified up to and including 2015.
 August 31, 2016: 2016 data checked and added to database by SJP.
 October 8, 2017: 2017 data checked and added to database by SJP.
+August 10, 2018: 2018 data checked and added to database by SJP.
 
 
 ### B. Accessibility
@@ -350,10 +358,10 @@ The fish data include 95 observations of sockeye salmon captured between 2012 an
 
 ### A. Data acquisition
 
-An example of the data entry form from 2014/2015 is given in Fig. 7.  This data entry form has varied over the years.
+An example of the data entry form from 2014/2015 is given in Fig. 8.  This data entry form has varied over the years.
 
-![Fig7](https://github.com/sjpeacock/Sea-lice-database/blob/master/Metadata/Figures/Fig7.png)
-**Fig. 7.** Example of completed data sheet for sea louse monitoring.  Upon returning to the field station, these data sheets were scanned, and later transcribed into digital format. The cop column has L or C for Lepeoptheirus or Caligus. ChalA and ChalB columns are hash marks for the number of chalimus A and chalimus B stages (no species).  All motile lice are noted in the motile column: pre-adult Lepeoptheirus (PAL), adult Lepeoptheirus (L), gravid Lepeoptheirus (GL), Caligus (C) or gravid Caligus (GC). The notes column has codes for motile scars (MS), predation scars (PS), hemorrhaging (H), eroded gill plate (EG), blue blotches (BB), and scales (SC). Any other information, including the type of predator scar and location of hemorrhaging, is written in the Comments column.
+![Fig8](https://github.com/sjpeacock/Sea-lice-database/blob/master/Metadata/Figures/Fig8.png)
+**Fig. 8.** Example of completed data sheet for sea louse monitoring.  Upon returning to the field station, these data sheets were scanned, and later transcribed into digital format. The cop column has L or C for Lepeoptheirus or Caligus. ChalA and ChalB columns are hash marks for the number of chalimus A and chalimus B stages (no species).  All motile lice are noted in the motile column: pre-adult Lepeoptheirus (PAL), adult Lepeoptheirus (L), gravid Lepeoptheirus (GL), Caligus (C) or gravid Caligus (GC). The notes column has codes for motile scars (MS), predation scars (PS), hemorrhaging (H), eroded gill plate (EG), blue blotches (BB), and scales (SC). Any other information, including the type of predator scar and location of hemorrhaging, is written in the Comments column.
 
 #### 1. Data forms or acquisition methods
 
