@@ -6,7 +6,7 @@ This repository contains data from long-term monitoring of juvenile salmon for s
  
 ## Using the data
 * **Before** using the data, please read the associated metadata (below)!
-* To download the entire repository, including the data and metadata, click Download .zip above
+* To download the entire repository, including the data and metadata, click "Download ZIP" under the green "Clone or download" button near the top-right of this page
 * The fish and site data can be accessed at the following URLs:
 
 > [https://raw.githubusercontent.com/sjpeacock/Sea-lice-database/master/Data/BroughtonSeaLice_fishData.csv](https://raw.githubusercontent.com/sjpeacock/Sea-lice-database/master/Data/BroughtonSeaLice_fishData.csv)
