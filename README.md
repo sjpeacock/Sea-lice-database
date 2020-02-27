@@ -2,7 +2,7 @@
 
 This repository contains data from long-term monitoring of juvenile salmon for sea lice, by the [Salmon Coast Field Station](www.salmoncoast.org). Questions should be directed to Stephanie Peacock (stephanie.j.peacock@gmail.com).
 
-**Last update:** August 10, 2018; data current through June 2018.
+**Last update:** February 27, 2020; data current through June 2019.
  
 ## Using the data
 * **Before** using the data, please read the associated metadata (below)!
@@ -178,7 +178,7 @@ We recorded fork length (from the "fork" in the tail, the most anterior portion 
 
 We categorized the species (*L. salmonis* or *C. clemensi*) and stages of attached sea lice according to published descriptions (Kabata 1972, Johnson and Albright 1991, Hamre et al. 2013).  A hand lens revealed sufficient detail to differentiate copepodid, chalimus, and motile stages of sea lice (Krkosek et al. 2005b).  For 2001, we do not have information on the species of sea lice, but C. clemensi was relatively uncommon (Morton and Williams 2003); all sea lice in 2001 were recorded as unidentified species (data columns unid_cope, unid_PA, unid_adult; Fig. 6).  For 2002-2004, we only distinguished between L. salmonis and C. clemensi for motile sea lice. From 2002 onwards, we further distinguished L. salmonis as pre-adult, adult males, non-gravid adult females, and gravid adult females (Fig. 6). For years 2004-2007, pre-adult L. salmonis were not identified to sex, but for years 2002-2003 and 2008 onwards, we identified pre-adult L. salmonis as male or female (Table 2). We did not distinguish pre-adult I and pre-adult II stages, as this is difficult to do accurately using a hand lens.  For motile C. clemensi, we distinguished adults (male and female) from gravid females, but did not distinguish non-gravid females from males or adults from pre-adults. Starting in 2005, we distinguished *L. salmonis* and *C. clemensi* at the copepodid stage (Fig. 5D). Given the similarity between *L. salmonis* and *C. clemensi* at the chalimus stage, we did not distinguish the two louse species at that stage.  We did, however, distinguish "chalimus A" and "chalimus B" stages, based on size and development (Hamre et al. 2013). The number of observed sea lice in each category, including instances of zeroes and missing data, are summarized in Table 2.
 
-Occasionally, we observed adult male sea lice firmly attaching to the posterior end of pre-adult female sea lice.  We noted this behaviour as "mate guarding" on the datasheet, as it may be of interest in studies of dispersal and mate limitation (e.g., Connors et al. 2011).
+Occasionally, we observed adult male sea lice firmly attaching to the posterior end of pre-adult female sea lice.  We noted this behaviour as "mate guarding" on the datasheet, as it may be of interest in studies of dispersal and mate limitation (e.g., Connors et al. 2011).  Sometimes we were unable to definitively identify the sex of the louse on the bottom of the mateguarding pair as it was partially concealed, and in such cases we assumed it to be a pre-adult female.
 
 ![Fig6](https://github.com/sjpeacock/Sea-lice-database/blob/master/Metadata/Figures/Fig6.png)
 **Fig. 6.** The relationships among unique columns in the dataset: italic grey words are the unique stages/sex/species that are differentiated in the dataset.  In early years (2001-2006) not all stages/species were distinguished; see text for details.
@@ -254,6 +254,8 @@ October 8, 2017: SJP added data from 2017 monitoring season.
 
 August 10, 2018: SJP added data from 2018 monitoring season, updated fish data to include observations of "white eye" (see Fig. 7).
 
+Febraury 27, 2020: SJP added data from 2019 monitoring season.
+
 #### 3. Metadata status
 
 December 2015: metadata compiled.
@@ -266,7 +268,7 @@ December 2015: Verified up to and including 2015.
 August 31, 2016: 2016 data checked and added to database by SJP.
 October 8, 2017: 2017 data checked and added to database by SJP.
 August 10, 2018: 2018 data checked and added to database by SJP.
-
+February 27, 2020: 2019 data checked by Emma Atkinson and added to database by SJP.
 
 ### B. Accessibility
 
