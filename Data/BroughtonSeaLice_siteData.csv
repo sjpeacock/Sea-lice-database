@@ -608,3 +608,42 @@ site_id,year,month,day,location,salt,temp,salmon_captured,salmon_examined,pink_e
 603,2018,6,29,Glacier,,,,,,,,,,,,,,,"Fully stocked with large adults, normal activity, mort tote looks heavily loaded. "
 604,2018,6,29,Burdwood,,,,,,,,,,,,,,,"3/4 stocked with small adults, normal activity. "
 605,2018,6,29,Wicklow,23,12.5,150,99,50,49,0,0,0,3,2,50.78747,126.67915,Ctenophores,"Outer nets down, auto-feeding, fully stocked with smolts, crew boat present. Took temp/sal data with refractometer and thermometer (forgot YSI). "
+606,2019,4,1,Glacier,,,200,56,50,6,0,0,0,10,1,,,1 Greenling,Farm structure but no fish,30.5,,8.6,,,0,0
+607,2019,4,1,Burdwood,,,45,45,15,30,0,0,0,1,2,,,none,Farm fully stocked,30.6,,9.1,,,0,0
+608,2019,4,1,Wicklow,,,0,0,0,0,0,0,0,0,0,,,none,No juvenile fish seen,31,,,,,0,0
+609,2019,4,8,Glacier,,,500,69,50,19,0,0,0,5,2,,,none,Dipped fish directly with large net,29.8,,8.2,,,0,0
+610,2019,4,8,Burdwood,,,800,100,50,50,0,0,0,1,1,,,none,,30.1,,8.7,,,0,0
+611,2019,4,8,Wicklow,,,0,0,0,0,0,0,0,0,0,,,none,No juvenile fish seen,31.1,,8.9,,,0,0
+612,2019,4,15,Glacier,30,8.8,200,62,50,12,0,1,0,19,1,50.8446,126.30152,none,"No fish, barge present, towing farm structure",30.1,,8.7,,,0,0
+613,2019,4,15,Burdwood,30.4,9.2,330,100,50,50,0,1,0,1,3,50.78778,126.49345,none,"Fully stocked, juvenile farm fish",30.5,,9.2,,,0,0
+614,2019,4,15,Wicklow,30.5,8.9,0,0,0,0,0,0,0,0,0,50.78302,126.70298,none,"Pred nets on, Badinotti (Bravo III) present, fully stocked, young adults, feeding",30.5,,8.9,,,0,0
+615,2019,4,24,Glacier,30.6,8.4,450,99,50,49,0,2,0,9,1,50.84482,126.3019,none,"No farm, farm has been moved to upper retreat",30.6,,8.4,,,0,0
+616,2019,4,23,Burdwood,28.8,9,500,100,50,50,0,2,0,1,1,50.7857,126.50203,1 sandlance,"Dive boat on site, 2 barges at farm, offloading big pallets (fish food?), fully stocked, feeding, small adults",29,,8.9,,,0,0
+617,2019,4,23,Wicklow,31.3,8.6,0,0,0,0,0,0,0,0,0,50.78653,126.67613,none,"Fully stocked with adults, pred nets on, feeding in some pens, saw two schools of 30 fish swimming deep and fast, blind set where we saw the second school but caught no fish",31.2,,8.6,,,0,0
+618,2019,4,28,Glacier,30,12,500,100,50,50,0,2,0,2,1,50.84755,126.30885,"1 poacher, 20 sandlance","No farm, brought YSI tote but forgot YSI, so used thermometer and refractometer for surf temp and sal",,,,,,0,0
+619,2019,4,28,Burdwood,29,19,800,100,50,50,0,1,0,2,1,50.78598,126.50183,3 sculpin,fully stocked,,,,,,0,0
+620,2019,4,28,Wicklow,28,8.9,850,100,50,50,0,0,0,2,1,50.78775,126.67688,"1 worm, 10 sandlance, 1 sculpin","adult fish, fully stocked",,,,,,0,0
+621,2019,5,6,Glacier,29.7,10.4,1500,100,50,50,0,2,0,1,1,50.84755,126.30877,5 sandlance,No farm ,29.7,,10.3,,,0,0
+622,2019,5,6,Burdwood,29.7,10.5,700,100,50,50,0,1,0,5,4,50.78595,126.50215,1 sandlance,"Farm fully stocked, feeding, large adults",29.8,,10.4,,,0,0
+623,2019,5,6,Wicklow,29.2,9.4,0,0,0,0,0,0,0,0,0,,,none,"Fully stocked, very large fish, saw no fish at either low or medium tides (searched twice), combined search time 90 min",29.7,,9.4,,,0,0
+624,2019,5,13,Glacier,27.6,12.4,1000,100,50,50,0,6,0,3,2,50.84785,126.30882,none,No farm,28.1,,12,,,0,0
+625,2019,5,13,Burdwood,27.9,11.7,1000,100,50,50,0,1,0,1,1,50.78625,126.50158,1 herring,fully stocked adult fish,28.6,,11.6,,,0,0
+626,2019,5,13,Wicklow,30.3,10.1,37,37,30,7,0,0,0,4,1,50.78657,126.67565,none,fully stocked large adults some feeding,30.6,,10.1,,,0,0
+627,2019,5,18,Glacier,26,11,250,100,50,50,0,2,0,4,1,,,none,No farm,,,,,,0,0
+628,2019,5,18,Burdwood,21,11,415,100,50,50,0,1,0,3,2,50.78593,126.50156,herring,"fully stocked, adults",,,,,,0,0
+629,2019,5,18,Wicklow,25,11,0,0,0,0,0,0,0,0,0,,,none,fully stocked large adults ,,,,,,0,0
+630,2019,5,27,Glacier,21.2,16.7,12,12,6,6,0,0,0,1,1,50.836583,126.302467,"~500 sandlance, 1 sculpin",No farm,22.6,,14,,,0,0
+631,2019,5,27,Burdwood,,,10000,43,25,18,0,100,0,15,1,50.785833,126.501217,none,fish farm anti predatornets lots of jumping,28,,11.5,,,0,0
+632,2019,5,27,Wicklow,26.8,11.5,0,0,0,0,0,0,0,0,0,50.788883,126.6774,none,"adult fish, fully stocked, Anti predator nets",28.2,,11.4,,,0,0
+633,2019,6,3,Glacier,25.1,13.2,94,79,50,29,0,3,0,65,29,50.84555,126.310556,1 stickleback,no farm,26.2,,12.6,,,0,0
+634,2019,6,3,Burdwood,19.5,15,73,53,50,3,0,0,0,70,3,50.785883,126.503,none,"adult fish, fully stocked, Anti predator nets",26.1,,12.8,,,0,0
+635,2019,6,3,Wicklow,28.4,11.2,41,42,27,14,0,0,0,2,1,50.787767,126.6785,"1xcopper rockfish, 1xpipefish, 1xperch, 10x sandlance, 2x dolly varden","adult fish, fully stocked, Anti predator nets",28.7,,11.2,,,0,0
+636,2019,6,11,Glacier,19,17,200,59,50,9,0,1,0,200,9,50.84497,126.29877,"sanlance 3, herring1",no farm,,,,,,0,0
+637,2019,6,11,Burdwood,20,20,75,60,50,10,0,0,0,65,10,50.78745,126.49897,"sandlance 150, herring 1075","Farm small adults, boat discovery dawn",,,,,,0,0
+638,2019,6,11,Wicklow,,,0,0,0,0,0,0,0,0,0,,,no fish caught,"g force boat with pipes large fish, set on school didn't catch",,,,,,0,0
+639,2019,6,17,Glacier,28.6,12.2,1500,97,50,46,1,1,0,8,1,50.84692,126.31,herring,no farm,29,,11.3,,,0,0
+640,2019,6,17,Burdwood,20.2,15.5,77,58,50,8,0,0,0,69,8,50.78627,126.503,herringx15000,"pred nets fully stocked adults, barge present",24.2,,14.2,,,0,0
+641,2019,6,17,Wicklow,29.7,11.4,133,56,50,5,1,0,0,20,3,50.78727,126.678,none,"large fish, feeding, anti pred nets, fully stocked",30,,11,,,0,0
+642,2019,6,24,Glacier,27,17,300,67,50,17,0,0,0,300,17,50.8448,126.30208,none,no farm,,,,,,0,0
+643,2019,6,24,Burdwood,23,13.5,300,79,50,29,0,0,0,300,29,50.79243,126.48177,"tube snout x2, 1 herring, 1 scuplin","pred nets fully stocked adults, barge present",,,,,,0,0
+644,2019,6,24,Wicklow,21,12.5,200,62,50,11,1,0,0,20,1,50.78725,126.67778,herring x1,"pred nets fully stocked adults, 2 net boats present",,,,,,0,0
