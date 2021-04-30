@@ -2,7 +2,7 @@
 
 This repository contains data from long-term monitoring of juvenile salmon for sea lice, by the [Salmon Coast Field Station](www.salmoncoast.org). Questions should be directed to Stephanie Peacock (stephanie.j.peacock@gmail.com).
 
-**Last update:** December 7, 2020; data current through April 30, 2021.
+**Last update:** April 30, 2021; data current through April 30, 2021.
  
 ## Using the data
 * **Before** using the data, please read the associated metadata (below)!
