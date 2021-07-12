@@ -2,7 +2,7 @@
 
 This repository contains data from long-term monitoring of juvenile salmon for sea lice, by the [Salmon Coast Field Station](www.salmoncoast.org). Questions should be directed to Stephanie Peacock (stephanie.j.peacock@gmail.com).
 
-**Last update:** May 26, 2021; data current through May 22, 2021. 
+**Last update:** July 12, 2021; data current through July 2, 2021 (last sampling day for 2021 season)
  
 ## Using the data
 * **Before** using the data, please read the associated metadata (below)!
@@ -260,6 +260,10 @@ December 7, 2020: SJP added data from 2020 monitoring season.
 
 April 30, 2021: SJP added data for April 2021 for in-season update.
 
+May 26, 2021: SJP added data for May 2021 in-season update.
+
+July 12, 2021: SJP added remainder of data for 2021 field season.
+
 #### 3. Metadata status
 
 December 2015: metadata compiled.
@@ -275,6 +279,8 @@ August 10, 2018: 2018 data checked and added to database by SJP.
 February 27, 2020: 2019 data checked by Emma Atkinson and added to database by SJP.
 December 7, 2020: 2020 data checked by SJP and Rob Hummeny (SCFS).
 April 30, 2021: SJP wrote a short script to check and add data from G-Sheet for in-season updates.
+July 12, 2021: 2021 data run by checks in dataUpdate.R
+
 
 ### B. Accessibility
 
