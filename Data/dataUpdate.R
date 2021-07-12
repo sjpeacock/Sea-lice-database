@@ -29,6 +29,7 @@ fishDat <- source_data(url = "https://raw.githubusercontent.com/sjpeacock/Sea-li
 
 # Import new data from Google Sheet
 fishDat.new <- read_sheet("https://docs.google.com/spreadsheets/d/10lKRyU4awJVBM9lt5fXlooOWThxdTEyZRFcldiofpyA/edit#gid=0", sheet = "fish_data")
+
 fishDat.new <- fishDat.new[!is.na(fishDat.new$year), ]
 
 # Truncate to include only data not already in GitHub
@@ -141,15 +142,6 @@ write.csv(fishDat.combined, file = "BroughtonSeaLice_fishData.csv", row.names = 
 
 # Import existing data from GitHub
 siteDat <- source_data(url = "https://raw.githubusercontent.com/sjpeacock/Sea-lice-database/master/Data/BroughtonSeaLice_siteData.csv")
-
-# # # Fix some old siteDat errors (May 13)
-# siteDat$longitude[which(siteDat$longitude == "")] <- NA
-# siteDat$longitude[which(siteDat$longitude == "126. 48098")] <- 126.48098
-# siteDat$longitude <- -as.numeric(siteDat$longitude)
-# siteDat$latitude[which(siteDat$latitude == "")] <- NA
-# siteDat$latitude[which(siteDat$latitude == "50. 79218")] <- 50.79218
-# siteDat$latitude <- as.numeric(siteDat$latitude)
-
 
 # Import new data from Google Sheet
 siteDat.new <- read_sheet("https://docs.google.com/spreadsheets/d/10lKRyU4awJVBM9lt5fXlooOWThxdTEyZRFcldiofpyA/edit#gid=822825731", sheet = "site_data")
