@@ -28,7 +28,7 @@ library(repmis)
 fishDat <- source_data(url = "https://raw.githubusercontent.com/sjpeacock/Sea-lice-database/master/Data/BroughtonSeaLice_fishData.csv")
 
 # Import new data from Google Sheet
-fishDat.new <- read_sheet("https://docs.google.com/spreadsheets/d/10lKRyU4awJVBM9lt5fXlooOWThxdTEyZRFcldiofpyA/edit#gid=0", sheet = "fish_data")
+fishDat.new <- read_sheet("https://docs.google.com/spreadsheets/d/1Syjf2zWWB0n0fYbutwNUxj4vlBC6cTYLcteanyr2afg", sheet = "fish_data")
 
 fishDat.new <- fishDat.new[!is.na(fishDat.new$year), ]
 
@@ -144,7 +144,7 @@ write.csv(fishDat.combined, file = "BroughtonSeaLice_fishData.csv", row.names = 
 siteDat <- source_data(url = "https://raw.githubusercontent.com/sjpeacock/Sea-lice-database/master/Data/BroughtonSeaLice_siteData.csv")
 
 # Import new data from Google Sheet
-siteDat.new <- read_sheet("https://docs.google.com/spreadsheets/d/10lKRyU4awJVBM9lt5fXlooOWThxdTEyZRFcldiofpyA/edit#gid=822825731", sheet = "site_data")
+siteDat.new <- read_sheet("https://docs.google.com/spreadsheets/d/1Syjf2zWWB0n0fYbutwNUxj4vlBC6cTYLcteanyr2afg", sheet = "site_data")
 siteDat.new <- siteDat.new[!is.na(siteDat.new$year), ]
 
 # Truncate to include only data not already in GitHub
