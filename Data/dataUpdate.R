@@ -13,6 +13,7 @@
 
 library(googlesheets4)
 library(repmis)
+library(httpuv)
 
 ###############################################################################
 ###############################################################################
@@ -28,7 +29,8 @@ library(repmis)
 fishDat <- source_data(url = "https://raw.githubusercontent.com/sjpeacock/Sea-lice-database/master/Data/BroughtonSeaLice_fishData.csv")
 
 # Import new data from Google Sheet
-fishDat.new <- read_sheet("https://docs.google.com/spreadsheets/d/10lKRyU4awJVBM9lt5fXlooOWThxdTEyZRFcldiofpyA/edit#gid=0", sheet = "fish_data")
+gs4_deauth() # Don't need authorization to access this sheet
+fishDat.new <- read_sheet("https://docs.google.com/spreadsheets/d/1SgLEdwhlX_TXRXJWB-wm7o5T1J9N0bLld9pcoCKaAqY/edit#gid=0", sheet = "fish_data")
 
 fishDat.new <- fishDat.new[!is.na(fishDat.new$year), ]
 
@@ -78,17 +80,17 @@ if(sum(fishDat.new$species %in% unique(fishDat$species) == FALSE) > 0){
 }
 
 # Check lengths & heights to see if they conform to existing data
-if(sum(fishDat.new$length < 10, fishDat.new$length > 200) > 0){
+if(sum(fishDat.new$length < 10, fishDat.new$length > 200, na.rm = TRUE) > 0){
 	print("WARNING: Check lengths?")
 	warnings <- c(warnings, "Check lengths")
 }
 
-if(sum(fishDat.new$height < 2, fishDat.new$height > 30) > 0){
+if(sum(fishDat.new$height < 2, fishDat.new$height > 30, na.rm = TRUE) > 0){
 	print("WARNING: Check heights?")
 	warnings <- c(warnings, "Check heights")
 }
 
-if(sum(fishDat.new$length/fishDat.new$height < min(fishDat$length/fishDat$height, na.rm = TRUE) | fishDat.new$length/fishDat.new$height > max(fishDat$length/fishDat$height, na.rm = TRUE))>0){
+if(sum(fishDat.new$length/fishDat.new$height < min(fishDat$length/fishDat$height, na.rm = TRUE) | fishDat.new$length/fishDat.new$height > max(fishDat$length/fishDat$height, na.rm = TRUE), na.rm = TRUE) >0){
 	print("WARNING: length/height out of range")
 	warnings <- c(warnings, "length/height out of range")
 }
@@ -144,7 +146,7 @@ write.csv(fishDat.combined, file = "BroughtonSeaLice_fishData.csv", row.names = 
 siteDat <- source_data(url = "https://raw.githubusercontent.com/sjpeacock/Sea-lice-database/master/Data/BroughtonSeaLice_siteData.csv")
 
 # Import new data from Google Sheet
-siteDat.new <- read_sheet("https://docs.google.com/spreadsheets/d/10lKRyU4awJVBM9lt5fXlooOWThxdTEyZRFcldiofpyA/edit#gid=822825731", sheet = "site_data")
+siteDat.new <- read_sheet("https://docs.google.com/spreadsheets/d/1SgLEdwhlX_TXRXJWB-wm7o5T1J9N0bLld9pcoCKaAqY/edit#gid=1365873183", sheet = "site_data", col_types = "iiiicddddiiiiiiiiiddddcc")
 siteDat.new <- siteDat.new[!is.na(siteDat.new$year), ]
 
 # Truncate to include only data not already in GitHub
