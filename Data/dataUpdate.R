@@ -130,7 +130,7 @@ warnings
 
 fishDat.combined <- rbind(fishDat, fishDat.new)
 
-write.csv(fishDat.combined, file = "BroughtonSeaLice_fishData.csv", row.names = FALSE)
+write.csv(fishDat.combined, file = "data/BroughtonSeaLice_fishData.csv", row.names = FALSE)
 
 ###############################################################################
 ###############################################################################
@@ -230,5 +230,5 @@ siteWarnings
 
 siteDat.combined <- rbind(siteDat, siteDat.new)
 
-write.csv(siteDat.combined, file = "BroughtonSeaLice_siteData.csv", row.names = FALSE)
+write.csv(siteDat.combined, file = "data/BroughtonSeaLice_siteData.csv", row.names = FALSE)
 
