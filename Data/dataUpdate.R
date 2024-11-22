@@ -14,7 +14,7 @@
 library(googlesheets4)
 library(repmis)
 library(httpuv)
-
+library(dplyr)
 ###############################################################################
 ###############################################################################
 # Fish data
@@ -30,13 +30,15 @@ fishDat <- source_data(url = "https://raw.githubusercontent.com/sjpeacock/Sea-li
 
 # Import new data from Google Sheet
 gs4_deauth() # Don't need authorization to access this sheet
-fishDat.new <- read_sheet("https://docs.google.com/spreadsheets/d/1SgLEdwhlX_TXRXJWB-wm7o5T1J9N0bLld9pcoCKaAqY/edit#gid=0", sheet = "fish_data")
+fishDat.new <- read_sheet("https://docs.google.com/spreadsheets/d/18y3g0idn71IeJvaZkG8QwLot5ag984RaV1v45n6UYks/edit?gid=0#gid=0", sheet = "fish", na = c("NA", ""))
 
 fishDat.new <- fishDat.new[!is.na(fishDat.new$year), ]
 
 # Truncate to include only data not already in GitHub
 fishDat.new <- fishDat.new[as.Date(paste(fishDat.new$year, fishDat.new$month, fishDat.new$day, sep = "-")) > max(as.Date(paste(fishDat$year, fishDat$month, fishDat$day, sep = "-"))), ]
 
+# Order new data by year-month-day-location
+fishDat.new <- fishDat.new[order(paste(fishDat.new$year, fishDat.new$month, fishDat.new$day, fishDat.new$location)),]
 ###############################################################################
 # Run checks
 ###############################################################################
@@ -50,11 +52,23 @@ if(boop > 0){
 	print("WARNING: headers don't match") 
 }
 
+# Is the order of headers the same?
+if(length(which(order(match(names(fishDat), names(fishDat.new))) - c(1:dim(fishDat)[2]) != 0))){
+	# Re-order fishDat.new to match
+	fishDat.new <- fishDat.new[, match(names(fishDat), names(fishDat.new))]
+}
+
+# Are fish numbers missing?
+if(sum(is.na(fishDat.new$fish_id)) != 0){
+	fishDat.new$fish_id <- max(fishDat$fish_id) + c(1:nrow(fishDat.new))
+}
+			 
 # Are fish_id consecutive?
 if(min(fishDat.new$fish_id) != (max(fishDat$fish_id) + 1)){
 	print("fish_id not consecutive") 
 	warnings <- c(warnings, "fish_id not consecutive")
 }
+
 # Check there's no duplicates
 if(sum(fishDat$fish_id %in% fishDat.new$fish_id) > 0){
 	print("WARNING: Duplicate fish_id")
@@ -67,6 +81,12 @@ if(sum(fishDat$site_id %in% fishDat.new$site_id) > 0){
 	warnings <- c(warnings, "Duplicate site_id")
 }
 
+# Address duplicate site ID for 2024
+siteid_2024 <- as.numeric(factor(paste(fishDat.new$year, fishDat.new$month, fishDat.new$day, fishDat.new$location, sep = "-")))
+fishDat.new$site_id <- max(fishDat$site_id) + siteid_2024
+# Note: need to reassign due to one site having 0 salmon examined
+fishDat.new$site_id <- siteDat.new$site_id[match(paste(fishDat.new$location, fishDat.new$month, fishDat.new$day), paste(siteDat.new$location, siteDat.new$month, siteDat.new$day))]
+
 # Locations match
 if(sum(fishDat.new$location %in% unique(fishDat$location) == FALSE) > 0){
 	print("WARNING: location names don't match")
@@ -78,6 +98,7 @@ if(sum(fishDat.new$species %in% unique(fishDat$species) == FALSE) > 0){
 	print("WARNING: species don't match")
 	warnings <- c(warnings, "species don't match")
 }
+# 2024, ok there is one coho. Can let that go.
 
 # Check lengths & heights to see if they conform to existing data
 if(sum(fishDat.new$length < 10, fishDat.new$length > 200, na.rm = TRUE) > 0){
@@ -89,6 +110,8 @@ if(sum(fishDat.new$height < 2, fishDat.new$height > 30, na.rm = TRUE) > 0){
 	print("WARNING: Check heights?")
 	warnings <- c(warnings, "Check heights")
 }
+# Set height to NA for fish_id 52866; datasheet says 80 mm which is improbable!
+fishDat.new$height[fishDat.new$fish_id == 52866] <- NA
 
 if(sum(fishDat.new$length/fishDat.new$height < min(fishDat$length/fishDat$height, na.rm = TRUE) | fishDat.new$length/fishDat.new$height > max(fishDat$length/fishDat$height, na.rm = TRUE), na.rm = TRUE) >0){
 	print("WARNING: length/height out of range")
@@ -146,11 +169,17 @@ write.csv(fishDat.combined, file = "BroughtonSeaLice_fishData.csv", row.names = 
 siteDat <- source_data(url = "https://raw.githubusercontent.com/sjpeacock/Sea-lice-database/master/Data/BroughtonSeaLice_siteData.csv")
 
 # Import new data from Google Sheet
-siteDat.new <- read_sheet("https://docs.google.com/spreadsheets/d/1SgLEdwhlX_TXRXJWB-wm7o5T1J9N0bLld9pcoCKaAqY/edit#gid=1365873183", sheet = "site_data", col_types = "iiiicddddiiiiiiiiiddddcc")
+siteDat.new <- read_sheet("https://docs.google.com/spreadsheets/d/18y3g0idn71IeJvaZkG8QwLot5ag984RaV1v45n6UYks/edit?gid=0#gid=0", sheet = "site", col_types = "iiiicddddiiiiiiiiiddddcc")
 siteDat.new <- siteDat.new[!is.na(siteDat.new$year), ]
 
 # Truncate to include only data not already in GitHub
 siteDat.new <- siteDat.new[as.Date(paste(siteDat.new$year, siteDat.new$month, siteDat.new$day, sep = "-")) > max(as.Date(paste(siteDat$year, siteDat$month, siteDat$day, sep = "-"))), ]
+
+# In 2024, we included a coho salmon; add coho_examined
+siteDat <- cbind(siteDat, coho_examined = rep(NA, dim(siteDat)[1]))
+
+# Remove "crew" from sitesDat.new in 2024
+siteDat.new <- siteDat.new[, which(names(siteDat.new) != "crew")]
 
 ###############################################################################
 # Run checks
@@ -167,7 +196,6 @@ siteDat.new$temp <- siteDat.new$temp_surf
 colInd <- match(names(siteDat), names(siteDat.new))
 # Check: cbind(names(siteDat), names(siteDat.new)[colInd])
 siteDat.new <- siteDat.new[, colInd]
-
 
 # site_id not always consecutive, but make sure there's not duplicates
 if(sum(siteDat$site_id %in% siteDat.new$site_id) > 0){
@@ -193,13 +221,13 @@ if(length(which(siteDat.new$temp < 4 | siteDat.new$temp > 20)) > 0){
 }
 
 # Numbers of fish captured
-if(sum(siteDat.new$salmon_examined != (siteDat.new$pink_examined + siteDat.new$chum_examined + siteDat.new$sockeye_examined)) > 0){
+if(sum(siteDat.new$salmon_examined != (siteDat.new$pink_examined + siteDat.new$chum_examined + siteDat.new$sockeye_examined + siteDat.new$coho_examined)) > 0){
 	print("WARNING: total examined not sum of pink, chum, sockeye")
-	siteWarnings <- c(siteWarnings, "total examined not sum of pink, chum, sockeye")
+	siteWarnings <- c(siteWarnings, "total examined not sum of pink, chum, coho, sockeye")
 	# cbind(siteDat.new$salmon_examined, siteDat.new$pink_examined + siteDat.new$chum_examined + siteDat.new$sockeye_examined)
 }
 
-if(length(which(siteDat.new[, c("pink_examined", "chum_examined", "sockeye_examined")] > 150)) > 0){
+if(length(which(siteDat.new[, c("pink_examined", "chum_examined", "sockeye_examined", "coho_examined")] > 150)) > 0){
 	print("WARNING: more than 150 sampled for one species")
 	siteWarnings <- c(siteWarnings, "more than 150 sampled for one species")
 }
