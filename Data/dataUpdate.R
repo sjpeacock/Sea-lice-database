@@ -15,145 +15,6 @@ library(googlesheets4)
 library(repmis)
 library(httpuv)
 library(dplyr)
-###############################################################################
-###############################################################################
-# Fish data
-###############################################################################
-###############################################################################
-
-###############################################################################
-# Import data
-###############################################################################
-
-# Import existing data from GitHub
-fishDat <- source_data(url = "https://raw.githubusercontent.com/sjpeacock/Sea-lice-database/master/Data/BroughtonSeaLice_fishData.csv")
-
-# Import new data from Google Sheet
-gs4_deauth() # Don't need authorization to access this sheet
-fishDat.new <- read_sheet("https://docs.google.com/spreadsheets/d/18y3g0idn71IeJvaZkG8QwLot5ag984RaV1v45n6UYks/edit?gid=0#gid=0", sheet = "fish", na = c("NA", ""))
-
-fishDat.new <- fishDat.new[!is.na(fishDat.new$year), ]
-
-# Truncate to include only data not already in GitHub
-fishDat.new <- fishDat.new[as.Date(paste(fishDat.new$year, fishDat.new$month, fishDat.new$day, sep = "-")) > max(as.Date(paste(fishDat$year, fishDat$month, fishDat$day, sep = "-"))), ]
-
-# Order new data by year-month-day-location
-fishDat.new <- fishDat.new[order(paste(fishDat.new$year, fishDat.new$month, fishDat.new$day, fishDat.new$location)),]
-###############################################################################
-# Run checks
-###############################################################################
-warnings <- NA
-
-# Do headers match exactly?
-boop <- sum(c(1:length(names(fishDat.new)) - match(names(fishDat.new), names(fishDat))))
-boop <- boop + (dim(fishDat)[2] - dim(fishDat.new)[2])
-if(boop > 0){
-	warnings <- c(warnings, "headers don't match")
-	print("WARNING: headers don't match") 
-}
-
-# Is the order of headers the same?
-if(length(which(order(match(names(fishDat), names(fishDat.new))) - c(1:dim(fishDat)[2]) != 0))){
-	# Re-order fishDat.new to match
-	fishDat.new <- fishDat.new[, match(names(fishDat), names(fishDat.new))]
-}
-
-# Are fish numbers missing?
-if(sum(is.na(fishDat.new$fish_id)) != 0){
-	fishDat.new$fish_id <- max(fishDat$fish_id) + c(1:nrow(fishDat.new))
-}
-			 
-# Are fish_id consecutive?
-if(min(fishDat.new$fish_id) != (max(fishDat$fish_id) + 1)){
-	print("fish_id not consecutive") 
-	warnings <- c(warnings, "fish_id not consecutive")
-}
-
-# Check there's no duplicates
-if(sum(fishDat$fish_id %in% fishDat.new$fish_id) > 0){
-	print("WARNING: Duplicate fish_id")
-	warnings <- c(warnings, "Duplicate fish_id")
-}
-
-# site_id not always consecutive, but make sure there's not duplicates
-if(sum(fishDat$site_id %in% fishDat.new$site_id) > 0){
-	print("WARNING: Duplicate site_id")
-	warnings <- c(warnings, "Duplicate site_id")
-}
-
-# Address duplicate site ID for 2024
-siteid_2024 <- as.numeric(factor(paste(fishDat.new$year, fishDat.new$month, fishDat.new$day, fishDat.new$location, sep = "-")))
-fishDat.new$site_id <- max(fishDat$site_id) + siteid_2024
-# Note: need to reassign due to one site having 0 salmon examined
-fishDat.new$site_id <- siteDat.new$site_id[match(paste(fishDat.new$location, fishDat.new$month, fishDat.new$day), paste(siteDat.new$location, siteDat.new$month, siteDat.new$day))]
-
-# Locations match
-if(sum(fishDat.new$location %in% unique(fishDat$location) == FALSE) > 0){
-	print("WARNING: location names don't match")
-	warnings <- c(warnings, "location names don't match")
-}
-
-# Species match
-if(sum(fishDat.new$species %in% unique(fishDat$species) == FALSE) > 0){
-	print("WARNING: species don't match")
-	warnings <- c(warnings, "species don't match")
-}
-# 2024, ok there is one coho. Can let that go.
-
-# Check lengths & heights to see if they conform to existing data
-if(sum(fishDat.new$length < 10, fishDat.new$length > 200, na.rm = TRUE) > 0){
-	print("WARNING: Check lengths?")
-	warnings <- c(warnings, "Check lengths")
-}
-
-if(sum(fishDat.new$height < 2, fishDat.new$height > 30, na.rm = TRUE) > 0){
-	print("WARNING: Check heights?")
-	warnings <- c(warnings, "Check heights")
-}
-# Set height to NA for fish_id 52866; datasheet says 80 mm which is improbable!
-fishDat.new$height[fishDat.new$fish_id == 52866] <- NA
-
-if(sum(fishDat.new$length/fishDat.new$height < min(fishDat$length/fishDat$height, na.rm = TRUE) | fishDat.new$length/fishDat.new$height > max(fishDat$length/fishDat$height, na.rm = TRUE), na.rm = TRUE) >0){
-	print("WARNING: length/height out of range")
-	warnings <- c(warnings, "length/height out of range")
-}
-
-# For each louse stage, check that the numbers are reasonable
-for(i in 11:26){
-	if(sum(!is.na(fishDat.new[, i])) > 0){
-	if(max(fishDat.new[, i], na.rm = TRUE) > 20){
-	print(paste("WARNING: ", names(fishDat.new)[i], "seems high."))
-	warnings <- c(warnings, paste(names(fishDat.new)[i], "seems high."))
-	}}
-}
-
-# For presence/absence metric, check that they're just zero or one
-for(i in c(27:29, 32:35)){
-	if(sum(!is.na(fishDat.new[, i])) > 0){
-		if(sum(fishDat.new[!is.na(fishDat.new[, i]), i] != 1) > 0){
-			print(paste("WARNING: ", names(fishDat.new)[i], "not NA/1."))
-			warnings <- c(warnings, paste(names(fishDat.new)[i], "not NA/1."))
-	}}
-}
-
-	
-if(sum(!is.na(fishDat.new$eroded_gill)) > 0){
-	if(sum(fishDat.new$eroded_gill[!is.na(fishDat.new$eroded_gill)] %in% c(1, 2) == FALSE) > 0){
-		print("WARNING: eroded_gill not NA, 1, or 2")
-		warnings <- c(warnings, "eroded_gill not NA, 1, or 2")
-}}
-
-warnings
-
-# If there are no warnings, then merge data
-
-###############################################################################
-# Merge data
-###############################################################################
-
-fishDat.combined <- rbind(fishDat, fishDat.new)
-
-write.csv(fishDat.combined, file = "BroughtonSeaLice_fishData.csv", row.names = FALSE)
 
 ###############################################################################
 ###############################################################################
@@ -169,17 +30,29 @@ write.csv(fishDat.combined, file = "BroughtonSeaLice_fishData.csv", row.names = 
 siteDat <- source_data(url = "https://raw.githubusercontent.com/sjpeacock/Sea-lice-database/master/Data/BroughtonSeaLice_siteData.csv")
 
 # Import new data from Google Sheet
-siteDat.new <- read_sheet("https://docs.google.com/spreadsheets/d/18y3g0idn71IeJvaZkG8QwLot5ag984RaV1v45n6UYks/edit?gid=0#gid=0", sheet = "site", col_types = "iiiicddddiiiiiiiiiddddcc")
+siteDat.new <- read_sheet("https://docs.google.com/spreadsheets/d/1YgIJMs-pf7nhamBjkK8uAgefdwPSpUkNMOVy4mBc1hw/edit?gid=2024901075#gid=2024901075", sheet = "site", col_types = "iiiicddddiiiiiiiiiddddcc")
 siteDat.new <- siteDat.new[!is.na(siteDat.new$year), ]
 
 # Truncate to include only data not already in GitHub
 siteDat.new <- siteDat.new[as.Date(paste(siteDat.new$year, siteDat.new$month, siteDat.new$day, sep = "-")) > max(as.Date(paste(siteDat$year, siteDat$month, siteDat$day, sep = "-"))), ]
 
-# In 2024, we included a coho salmon; add coho_examined
-siteDat <- cbind(siteDat, coho_examined = rep(NA, dim(siteDat)[1]))
-
-# Remove "crew" from sitesDat.new in 2024
+# Remove "crew" from sitesDat.new in 2024 and 2025
 siteDat.new <- siteDat.new[, which(names(siteDat.new) != "crew")]
+
+#------------------------------------------------------------------------------
+# Re-assign site_id for 2025 data (was 1,2,3 in 2025 google sheet)
+#------------------------------------------------------------------------------
+
+site_id_2025 <- siteDat.new %>%
+	mutate(location = factor(location, levels = c("Glacier", "Burdwood", "Wicklow"))) %>% # Make location factor so Glacier is first
+	arrange(year, month, day, location) %>% # Order dataset
+	mutate(site_factor = factor(paste(year, month, day, location, sep = "-"))) %>% # Create factor
+	distinct(site_factor)
+
+site_id_2025$site_num <- 1:nrow(site_id_2025)
+site_id_2025$site_id <- max(siteDat$site_id) + site_id_2025$site_num
+
+siteDat.new$site_id <- site_id_2025$site_id[match(factor(paste(siteDat.new$year, siteDat.new$month, siteDat.new$day, siteDat.new$location, sep = "-")), site_id_2025$site_factor)]
 
 ###############################################################################
 # Run checks
@@ -259,4 +132,146 @@ siteWarnings
 siteDat.combined <- rbind(siteDat, siteDat.new)
 
 write.csv(siteDat.combined, file = "BroughtonSeaLice_siteData.csv", row.names = FALSE)
+
+###############################################################################
+###############################################################################
+# Fish data
+###############################################################################
+###############################################################################
+
+###############################################################################
+# Import data
+###############################################################################
+
+# Import existing data from GitHub
+fishDat <- source_data(url = "https://raw.githubusercontent.com/sjpeacock/Sea-lice-database/master/Data/BroughtonSeaLice_fishData.csv")
+
+# Import new data from Google Sheet
+gs4_deauth() # Don't need authorization to access this sheet
+fishDat.new <- read_sheet("https://docs.google.com/spreadsheets/d/1YgIJMs-pf7nhamBjkK8uAgefdwPSpUkNMOVy4mBc1hw/edit?gid=2024901075#gid=2024901075", sheet = "fish", na = c("NA", ""))
+
+fishDat.new <- fishDat.new[!is.na(fishDat.new$year), ]
+
+# Truncate to include only data not already in GitHub
+fishDat.new <- fishDat.new[as.Date(paste(fishDat.new$year, fishDat.new$month, fishDat.new$day, sep = "-")) > max(as.Date(paste(fishDat$year, fishDat$month, fishDat$day, sep = "-"))), ]
+
+#------------------------------------------------------------------------------
+# Re-assign site_id for 2025 data (was 1,2,3 in 2025 google sheet)
+#------------------------------------------------------------------------------
+
+fishDat.new$site_id <- site_id_2025$site_id[match(factor(paste(fishDat.new$year, fishDat.new$month, fishDat.new$day, fishDat.new$location, sep = "-")), site_id_2025$site_factor)]
+
+fishDat.new <- fishDat.new %>% arrange(site_id)
+
+###############################################################################
+# Run checks
+###############################################################################
+warnings <- NA
+
+# Do headers match exactly?
+boop <- sum(c(1:length(names(fishDat.new)) - match(names(fishDat.new), names(fishDat))))
+boop <- boop + (dim(fishDat)[2] - dim(fishDat.new)[2])
+if(boop > 0){
+	warnings <- c(warnings, "headers don't match")
+	print("WARNING: headers don't match") 
+}
+
+# Is the order of headers the same?
+if(length(which(order(match(names(fishDat), names(fishDat.new))) - c(1:dim(fishDat)[2]) != 0))){
+	# Re-order fishDat.new to match
+	fishDat.new <- fishDat.new[, match(names(fishDat), names(fishDat.new))]
+}
+
+# Are fish numbers missing?
+if(sum(is.na(fishDat.new$fish_id)) != 0){
+	fishDat.new$fish_id <- max(fishDat$fish_id) + c(1:nrow(fishDat.new))
+}
+			 
+# Are fish_id consecutive?
+if(min(fishDat.new$fish_id) != (max(fishDat$fish_id) + 1)){
+	print("fish_id not consecutive") 
+	warnings <- c(warnings, "fish_id not consecutive")
+}
+
+# Check there's no duplicates
+if(sum(fishDat$fish_id %in% fishDat.new$fish_id) > 0){
+	print("WARNING: Duplicate fish_id")
+	warnings <- c(warnings, "Duplicate fish_id")
+}
+
+# site_id not always consecutive, but make sure there's not duplicates
+if(sum(fishDat$site_id %in% fishDat.new$site_id) > 0){
+	print("WARNING: Duplicate site_id")
+	warnings <- c(warnings, "Duplicate site_id")
+}
+
+
+# Locations match
+if(sum(fishDat.new$location %in% unique(fishDat$location) == FALSE) > 0){
+	print("WARNING: location names don't match")
+	warnings <- c(warnings, "location names don't match")
+}
+
+# Species match
+if(sum(fishDat.new$species %in% unique(fishDat$species) == FALSE) > 0){
+	print("WARNING: species don't match")
+	warnings <- c(warnings, "species don't match")
+}
+# 2024, ok there is one coho. Can let that go.
+
+# Check lengths & heights to see if they conform to existing data
+if(sum(fishDat.new$length < 10, fishDat.new$length > 200, na.rm = TRUE) > 0){
+	print("WARNING: Check lengths?")
+	warnings <- c(warnings, "Check lengths")
+}
+
+if(sum(fishDat.new$height < 2, fishDat.new$height > 30, na.rm = TRUE) > 0){
+	print("WARNING: Check heights?")
+	warnings <- c(warnings, "Check heights")
+}
+# Set height to NA for fish_id 52866; datasheet says 80 mm which is improbable!
+fishDat.new$height[fishDat.new$fish_id == 52866] <- NA
+
+if(sum(fishDat.new$length/fishDat.new$height < min(fishDat$length/fishDat$height, na.rm = TRUE) | fishDat.new$length/fishDat.new$height > max(fishDat$length/fishDat$height, na.rm = TRUE), na.rm = TRUE) >0){
+	print("WARNING: length/height out of range")
+	warnings <- c(warnings, "length/height out of range")
+}
+
+# For each louse stage, check that the numbers are reasonable
+for(i in 11:26){
+	if(sum(!is.na(fishDat.new[, i])) > 0){
+	if(max(fishDat.new[, i], na.rm = TRUE) > 20){
+	print(paste("WARNING: ", names(fishDat.new)[i], "seems high."))
+	warnings <- c(warnings, paste(names(fishDat.new)[i], "seems high."))
+	}}
+}
+
+# For presence/absence metric, check that they're just zero or one
+for(i in c(27:29, 32:35)){
+	if(sum(!is.na(fishDat.new[, i])) > 0){
+		if(sum(fishDat.new[!is.na(fishDat.new[, i]), i] != 1) > 0){
+			print(paste("WARNING: ", names(fishDat.new)[i], "not NA/1."))
+			warnings <- c(warnings, paste(names(fishDat.new)[i], "not NA/1."))
+	}}
+}
+
+	
+if(sum(!is.na(fishDat.new$eroded_gill)) > 0){
+	if(sum(fishDat.new$eroded_gill[!is.na(fishDat.new$eroded_gill)] %in% c(1, 2) == FALSE) > 0){
+		print("WARNING: eroded_gill not NA, 1, or 2")
+		warnings <- c(warnings, "eroded_gill not NA, 1, or 2")
+}}
+
+warnings
+
+# If there are no warnings, then merge data
+
+###############################################################################
+# Merge data
+###############################################################################
+
+fishDat.combined <- rbind(fishDat, fishDat.new)
+
+write.csv(fishDat.combined, file = "BroughtonSeaLice_fishData.csv", row.names = FALSE)
+
 
